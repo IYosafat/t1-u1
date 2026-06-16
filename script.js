@@ -28,7 +28,7 @@ const CONFIG = {
    1. COUNTDOWN TIMER
    ===================================================== */
 function updateCountdown() {
-  const target  = new Date(CONFIG.weddingDate).2027-02-14T08:00:00();
+  const target  = new Date('2027-02-14T08:00:00').getTime();
   const now     = Date.now();
   const diff    = target - now;
 
