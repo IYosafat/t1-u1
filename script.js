@@ -229,34 +229,6 @@ function escapeHtml(str) {
   return String(str).replace(/[&<>"']/g, (m) => map[m]);
 }
 
-
-/* =====================================================
-   5. MUSIK BACKGROUND
-   ===================================================== */
-const musicBtn  = document.getElementById('musicBtn');
-const bgMusic   = document.getElementById('bgMusic');
-const musicIcon = document.getElementById('musicIcon');
-let   isPlaying = false;
-
-if (musicBtn && bgMusic) {
-  musicBtn.addEventListener('click', () => {
-    if (isPlaying) {
-      bgMusic.pause();
-      musicIcon.textContent = '♪';
-      musicBtn.title = 'Putar Musik';
-    } else {
-      bgMusic.play().catch(() => {
-        // Browser memblokir autoplay sebelum interaksi user
-        showToast('Klik lagi untuk memutar musik 🎵');
-      });
-      musicIcon.textContent = '⏸';
-      musicBtn.title = 'Jeda Musik';
-    }
-    isPlaying = !isPlaying;
-  });
-}
-
-
 /* =====================================================
    6. SCROLL REVEAL RINGAN (tanpa library)
    ===================================================== */
