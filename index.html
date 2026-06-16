@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Undangan Pernikahan — Andi & Bunga</title>
+  <!-- =====================================================
+       GOOGLE FONTS
+       ===================================================== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garant:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Lato:wght@300;400;700&family=Great+Vibes&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <!-- =====================================================
+       MUSIC PLAYER (opsional, klik play manual)
+       ===================================================== -->
+  <div class="music-btn" id="musicBtn" title="Putar / Jeda Musik">
+    <span id="musicIcon">♪</span>
+  </div>
+  <!-- Ganti src dengan link lagu MP3 Anda -->
+  <audio id="bgMusic" loop>
+    <source src="musik.mp3" type="audio/mpeg"/>
+  </audio>
+
+  <!-- =====================================================
+       COVER / HERO SECTION
+       ===================================================== -->
+  <section class="hero" id="hero">
+    <!-- ↓ Ganti URL foto hero di bawah ini ↓ -->
+    <div class="hero-bg" style="background-image: url('https://images.unsplash.com/photo-1606800052052-a08af7148866?w=1600&q=80');"></div>
+    <div class="hero-overlay"></div>
+
+    <!-- Ornamen SVG floral (animasi float) -->
+    <div class="floral-ornament floral-top-left" aria-hidden="true">
+      <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <g fill="none" stroke="#C9A96E" stroke-width="1" opacity="0.7">
+          <path d="M100,10 Q130,50 100,80 Q70,50 100,10Z"/>
+          <path d="M100,10 Q140,30 120,70 Q80,70 60,30 Q100,10 100,10Z" opacity="0.5"/>
+          <circle cx="100" cy="100" r="5" fill="#C9A96E"/>
+          <path d="M100,100 Q110,130 100,160 Q90,130 100,100Z"/>
+          <path d="M100,100 Q130,110 160,100 Q130,90 100,100Z"/>
+          <path d="M100,100 Q70,110 40,100 Q70,90 100,100Z"/>
+          <path d="M100,100 Q110,70 100,40 Q90,70 100,100Z"/>
+        </g>
+      </svg>
+    </div>
+    <div class="floral-ornament floral-bot-right" aria-hidden="true">
+      <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <g fill="none" stroke="#C9A96E" stroke-width="1" opacity="0.7">
+          <path d="M100,10 Q130,50 100,80 Q70,50 100,10Z"/>
+          <circle cx="100" cy="100" r="5" fill="#C9A96E"/>
+          <path d="M100,100 Q110,130 100,160 Q90,130 100,100Z"/>
+          <path d="M100,100 Q130,110 160,100 Q130,90 100,100Z"/>
+          <path d="M100,100 Q70,110 40,100 Q70,90 100,100Z"/>
+          <path d="M100,100 Q110,70 100,40 Q90,70 100,100Z"/>
+        </g>
+      </svg>
+    </div>
+
+    <div class="hero-content">
+      <p class="hero-label">Undangan Pernikahan</p>
+      <div class="hero-names">
+        <!-- ↓ Ganti nama pengantin ↓ -->
+        <span class="name-bride">Bunga Citra</span>
+        <span class="hero-and">&amp;</span>
+        <span class="name-groom">Andi Pratama</span>
+      </div>
+      <!-- ↓ Ganti tanggal acara ↓ -->
+      <p class="hero-date">Sabtu, 14 Februari 2026</p>
+      <a href="#detail" class="btn-outline hero-cta">Lihat Undangan ↓</a>
+    </div>
+  </section>
+
+  <!-- =====================================================
+       DETAIL ACARA
+       ===================================================== -->
+  <section class="section detail-section" id="detail">
+    <div class="divider-ornament" aria-hidden="true">✦ ✦ ✦</div>
+    <h2 class="section-title">Kami Mengundang Kehadiran Anda</h2>
+    <p class="section-body">
+      <!-- ↓ Ganti teks sambutan ↓ -->
+      Menjadi kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir
+      dan turut merayakan hari istimewa kami.
+    </p>
+
+    <div class="event-cards">
+      <!-- AKAD NIKAH -->
+      <div class="event-card">
+        <div class="event-icon">💍</div>
+        <h3>Akad Nikah</h3>
+        <!-- ↓ Ganti tanggal & waktu akad ↓ -->
+        <p class="event-detail">Sabtu, 14 Februari 2026</p>
+        <p class="event-detail">08.00 — 10.00 WIB</p>
+        <!-- ↓ Ganti lokasi akad ↓ -->
+        <p class="event-place">Masjid Al-Falah, Bandung</p>
+      </div>
+
+      <!-- RESEPSI -->
+      <div class="event-card">
+        <div class="event-icon">🌸</div>
+        <h3>Resepsi Pernikahan</h3>
+        <!-- ↓ Ganti tanggal & waktu resepsi ↓ -->
+        <p class="event-detail">Sabtu, 14 Februari 2026</p>
+        <p class="event-detail">11.00 — 15.00 WIB</p>
+        <!-- ↓ Ganti lokasi resepsi ↓ -->
+        <p class="event-place">Gedung Graha Santika, Bandung</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================
+       COUNTDOWN TIMER
+       ===================================================== -->
+  <section class="section countdown-section">
+    <div class="countdown-bg-pattern" aria-hidden="true"></div>
+    <p class="section-eyebrow" style="color:#FAF7F4;">Menuju Hari Istimewa</p>
+    <div class="countdown-wrap" id="countdown">
+      <div class="cd-box">
+        <span class="cd-num" id="cd-days">00</span>
+        <span class="cd-label">Hari</span>
+      </div>
+      <span class="cd-sep">:</span>
+      <div class="cd-box">
+        <span class="cd-num" id="cd-hours">00</span>
+        <span class="cd-label">Jam</span>
+      </div>
+      <span class="cd-sep">:</span>
+      <div class="cd-box">
+        <span class="cd-num" id="cd-minutes">00</span>
+        <span class="cd-label">Menit</span>
+      </div>
+      <span class="cd-sep">:</span>
+      <div class="cd-box">
+        <span class="cd-num" id="cd-seconds">00</span>
+        <span class="cd-label">Detik</span>
+      </div>
+    </div>
+    <!-- ↓ Ganti tanggal target countdown (format: YYYY-MM-DDTHH:MM:SS) ↓ -->
+    <p id="countdown-done" class="countdown-done" style="display:none;">
+      🎊 Hari Bahagia Telah Tiba! 🎊
+    </p>
+  </section>
+
+  <!-- =====================================================
+       GALERI FOTO (3 foto)
+       ===================================================== -->
+  <section class="section gallery-section" id="galeri">
+    <div class="divider-ornament" aria-hidden="true">✦ ✦ ✦</div>
+    <h2 class="section-title">Galeri Foto</h2>
+    <p class="section-body">Momen indah yang kami abadikan bersama.</p>
+
+    <div class="gallery-grid">
+      <!-- ↓ Ganti ketiga URL foto galeri di bawah ini ↓ -->
+      <div class="gallery-item gallery-item--tall">
+        <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=800&q=80"
+             alt="Foto pengantin 1" loading="lazy"/>
+        <div class="gallery-overlay"><span>Bersama</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?w=800&q=80"
+             alt="Foto pengantin 2" loading="lazy"/>
+        <div class="gallery-overlay"><span>Bahagia</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1537633552985-df8429e8048b?w=800&q=80"
+             alt="Foto pengantin 3" loading="lazy"/>
+        <div class="gallery-overlay"><span>Selamanya</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================
+       PETA LOKASI
+       ===================================================== -->
+  <section class="section maps-section" id="lokasi">
+    <div class="divider-ornament" aria-hidden="true">✦ ✦ ✦</div>
+    <h2 class="section-title">Lokasi Acara</h2>
+
+    <!-- ↓ Ganti alamat lengkap di bawah ini ↓ -->
+    <p class="maps-address">
+      📍 Gedung Graha Santika<br/>
+      Jl. Soekarno-Hatta No. 123, Bandung, Jawa Barat 40286
+    </p>
+
+    <div class="maps-embed-wrap">
+      <!--
+        ↓ CARA GANTI PETA:
+        1. Buka maps.google.com → cari lokasi venue Anda
+        2. Klik "Bagikan" → "Sematkan peta" → Salin kode iframe
+        3. Tempelkan kode iframe tersebut di sini (ganti seluruh tag <iframe> di bawah)
+      -->
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.9038348437977!2d107.60981307501688!3d-6.917464893083484!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e64c5e8866f5%3A0xfe6c7f458a89a72f!2sBandung%2C%20West%20Java!5e0!3m2!1sen!2sid!4v1718000000000!5m2!1sen!2sid"
+        width="100%"
+        height="380"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Peta Lokasi Acara"
+      ></iframe>
+    </div>
+
+    <!-- ↓ Ganti link Google Maps dengan link venue Anda ↓ -->
+    <a class="btn-primary"
+       href="https://maps.google.com/?q=Bandung,West+Java"
+       target="_blank" rel="noopener noreferrer">
+      🗺️ Buka di Google Maps
+    </a>
+  </section>
+
+  <!-- =====================================================
+       AMPLOP DIGITAL / CASHLESS GIFT
+       ===================================================== -->
+  <section class="section gift-section" id="amplop">
+    <div class="divider-ornament" aria-hidden="true">✦ ✦ ✦</div>
+    <h2 class="section-title">Amplop Digital</h2>
+    <p class="section-body">
+      Doa dan kehadiran Anda adalah hadiah terbaik bagi kami.
+      Namun jika Anda ingin memberikan hadiah, berikut informasinya.
+    </p>
+
+    <div class="gift-cards">
+
+      <!-- REKENING 1 -->
+      <div class="gift-card">
+        <!-- ↓ Ganti nama bank ↓ -->
+        <div class="gift-bank">🏦 Bank BCA</div>
+        <!-- ↓ Ganti nama pemilik rekening ↓ -->
+        <div class="gift-name">Bunga Citra Lestari</div>
+        <!-- ↓ Ganti nomor rekening ↓ -->
+        <div class="gift-number" id="rek1">1234 5678 9012</div>
+        <button class="btn-copy" onclick="copyRek('rek1', this)">
+          📋 Salin Nomor Rekening
+        </button>
+      </div>
+
+      <!-- REKENING 2 / E-WALLET -->
+      <div class="gift-card">
+        <!-- ↓ Ganti jenis e-wallet / bank ↓ -->
+        <div class="gift-bank">💚 GoPay / OVO</div>
+        <!-- ↓ Ganti nama pemilik ↓ -->
+        <div class="gift-name">Andi Pratama</div>
+        <!-- ↓ Ganti nomor HP e-wallet ↓ -->
+        <div class="gift-number" id="rek2">0812 3456 7890</div>
+        <button class="btn-copy" onclick="copyRek('rek2', this)">
+          📋 Salin Nomor
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =====================================================
+       UCAPAN & DOA (Form + Daftar Ucapan)
+       ===================================================== -->
+  <section class="section wishes-section" id="ucapan">
+    <div class="divider-ornament" aria-hidden="true">✦ ✦ ✦</div>
+    <h2 class="section-title">Ucapan &amp; Doa</h2>
+    <p class="section-body">Tuliskan doa dan ucapan terbaik Anda untuk kami.</p>
+
+    <!-- FORM UCAPAN -->
+    <div class="wish-form-wrap">
+      <div class="form-group">
+        <label for="guestName">Nama Lengkap <span class="required">*</span></label>
+        <input type="text" id="guestName" placeholder="Masukkan nama Anda" required/>
+      </div>
+
+      <div class="form-group">
+        <label for="attendance">Konfirmasi Kehadiran <span class="required">*</span></label>
+        <select id="attendance">
+          <option value="">— Pilih —</option>
+          <option value="Hadir">✅ Insya Allah Hadir</option>
+          <option value="Tidak Hadir">❌ Berhalangan Hadir</option>
+          <option value="Belum Pasti">🤔 Belum Pasti</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="wishMessage">Pesan &amp; Doa <span class="required">*</span></label>
+        <textarea id="wishMessage" rows="4" placeholder="Tuliskan doa dan ucapan Anda…"></textarea>
+      </div>
+
+      <button class="btn-primary" id="submitWish" onclick="submitWish()">
+        💌 Kirim Ucapan
+      </button>
+      <p id="form-status" class="form-status"></p>
+    </div>
+
+  </section>
+
+  <!-- =====================================================
+       FOOTER
+       ===================================================== -->
+  <footer class="footer">
+    <div class="footer-floral" aria-hidden="true">🌸 🌺 🌸</div>
+    <!-- ↓ Ganti nama pengantin ↓ -->
+    <p class="footer-names">Bunga &amp; Andi</p>
+    <p class="footer-quote">
+      "Dua jiwa yang bersatu adalah awal dari satu kisah yang indah."
+    </p>
+    <p class="footer-copy">Dibuat dengan ❤️ · © 2026</p>
+  </footer>
+
+  <!-- =====================================================
+       TOAST NOTIFICATION
+       ===================================================== -->
+  <div class="toast" id="toast"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
