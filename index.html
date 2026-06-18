@@ -13,7 +13,18 @@
   <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-  
+
+  <!-- =====================================================
+       MUSIC PLAYER (opsional, klik play manual)
+       ===================================================== -->
+  <div class="music-btn" id="musicBtn" title="Putar / Jeda Musik">
+    <span id="musicIcon">♪</span>
+  </div>
+  <!-- Ganti src dengan link lagu MP3 Anda -->
+  <audio id="bgMusic" loop>
+    <source src="musik.mp3" type="audio/mpeg"/>
+  </audio>
+
   <!-- =====================================================
        COVER / HERO SECTION
        ===================================================== -->
@@ -259,16 +270,6 @@
       </div>
 
       <div class="form-group">
-        <label for="attendance">Konfirmasi Kehadiran <span class="required">*</span></label>
-        <select id="attendance">
-          <option value="">— Pilih —</option>
-          <option value="Hadir">✅ Akan Hadir</option>
-          <option value="Tidak Hadir">❌ Berhalangan Hadir</option>
-          <option value="Belum Pasti">🤔 Belum Pasti</option>
-        </select>
-      </div>
-
-      <div class="form-group">
         <label for="wishMessage">Pesan &amp; Doa <span class="required">*</span></label>
         <textarea id="wishMessage" rows="4" placeholder="Tuliskan doa dan ucapan Anda…"></textarea>
       </div>
@@ -291,7 +292,7 @@
     <p class="footer-quote">
       "Dua jiwa yang bersatu adalah awal dari satu kisah yang indah."
     </p>
-    <p class="footer-copy">Dibuat dengan ❤️ EliYos · © 2026</p>
+    <p class="footer-copy">Dibuat dengan ❤️ · © 2026</p>
   </footer>
 
   <!-- =====================================================

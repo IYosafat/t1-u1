@@ -28,7 +28,7 @@ const CONFIG = {
    1. COUNTDOWN TIMER
    ===================================================== */
 function updateCountdown() {
-  const target  = new Date('2027-02-14T08:00:00').getTime();
+  const target  = new Date(CONFIG.weddingDate).getTime();
   const now     = Date.now();
   const diff    = target - now;
 
@@ -139,26 +139,18 @@ async function sendToSheets(data) {
  */
 async function submitWish() {
   const nameEl    = document.getElementById('guestName');
-  const attendEl  = document.getElementById('attendance');
   const msgEl     = document.getElementById('wishMessage');
   const statusEl  = document.getElementById('form-status');
   const submitBtn = document.getElementById('submitWish');
 
-  const name       = nameEl.value.trim();
-  const attendance = attendEl.value;
-  const message    = msgEl.value.trim();
+  const name    = nameEl.value.trim();
+  const message = msgEl.value.trim();
 
   // Validasi
   if (!name) {
     statusEl.className   = 'form-status error';
     statusEl.textContent = '⚠️ Mohon isi nama lengkap Anda.';
     nameEl.focus();
-    return;
-  }
-  if (!attendance) {
-    statusEl.className   = 'form-status error';
-    statusEl.textContent = '⚠️ Mohon pilih konfirmasi kehadiran.';
-    attendEl.focus();
     return;
   }
   if (!message) {
@@ -176,23 +168,18 @@ async function submitWish() {
 
   const wishData = {
     name,
-    attendance,
     message,
     timestamp: new Date().toLocaleString('id-ID', { timeZone: 'Asia/Jakarta' }),
   };
 
   try {
-    // Kirim ke Google Sheets (background)
     if (CONFIG.useSheetsIntegration) {
       await sendToSheets(wishData);
     }
 
-    // Reset form
-    nameEl.value   = '';
-    attendEl.value = '';
-    msgEl.value    = '';
+    nameEl.value = '';
+    msgEl.value  = '';
 
-    // Tampilkan pesan sukses — tanpa reload halaman
     statusEl.className   = 'form-status';
     statusEl.textContent = '✅ Terima kasih, pesan Anda telah tersimpan! 🌸';
     showToast('Pesan berhasil dikirim! 💌');
@@ -204,7 +191,6 @@ async function submitWish() {
   } finally {
     submitBtn.disabled    = false;
     submitBtn.textContent = '💌 Kirim Ucapan';
-    // Hapus pesan status setelah 6 detik
     setTimeout(() => { statusEl.textContent = ''; }, 6000);
   }
 }
@@ -228,6 +214,34 @@ function escapeHtml(str) {
   const map = { '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' };
   return String(str).replace(/[&<>"']/g, (m) => map[m]);
 }
+
+
+/* =====================================================
+   5. MUSIK BACKGROUND
+   ===================================================== */
+const musicBtn  = document.getElementById('musicBtn');
+const bgMusic   = document.getElementById('bgMusic');
+const musicIcon = document.getElementById('musicIcon');
+let   isPlaying = false;
+
+if (musicBtn && bgMusic) {
+  musicBtn.addEventListener('click', () => {
+    if (isPlaying) {
+      bgMusic.pause();
+      musicIcon.textContent = '♪';
+      musicBtn.title = 'Putar Musik';
+    } else {
+      bgMusic.play().catch(() => {
+        // Browser memblokir autoplay sebelum interaksi user
+        showToast('Klik lagi untuk memutar musik 🎵');
+      });
+      musicIcon.textContent = '⏸';
+      musicBtn.title = 'Jeda Musik';
+    }
+    isPlaying = !isPlaying;
+  });
+}
+
 
 /* =====================================================
    6. SCROLL REVEAL RINGAN (tanpa library)
